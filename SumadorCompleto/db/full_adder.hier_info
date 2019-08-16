@@ -1,0 +1,989 @@
+|full_adder
+a[0] => adder_4bit:mainAdder.a[0]
+a[0] => comparator_8bit:negative.a[0]
+a[1] => adder_4bit:mainAdder.a[1]
+a[1] => comparator_8bit:negative.a[1]
+a[2] => adder_4bit:mainAdder.a[2]
+a[2] => comparator_8bit:negative.a[2]
+a[3] => adder_4bit:mainAdder.a[3]
+a[3] => comparator_8bit:negative.a[3]
+b[0] => complement_a1:operationType.numIn[0]
+b[0] => comparator_8bit:negative.b[0]
+b[1] => complement_a1:operationType.numIn[1]
+b[1] => comparator_8bit:negative.b[1]
+b[2] => complement_a1:operationType.numIn[2]
+b[2] => comparator_8bit:negative.b[2]
+b[3] => complement_a1:operationType.numIn[3]
+b[3] => comparator_8bit:negative.b[3]
+cin => process_0.IN1
+cin => complement_a1:operationType.condition
+cin => adder_4bit:mainAdder.cin
+cin => mux_8bit:selectOperation.condition
+enable => process_0.IN1
+enable => hex_7_seg:displayDecoder1.enable
+enable => hex_7_seg:displayDecoder2.enable
+display1[0] <= hex_7_seg:displayDecoder1.display[0]
+display1[1] <= hex_7_seg:displayDecoder1.display[1]
+display1[2] <= hex_7_seg:displayDecoder1.display[2]
+display1[3] <= hex_7_seg:displayDecoder1.display[3]
+display1[4] <= hex_7_seg:displayDecoder1.display[4]
+display1[5] <= hex_7_seg:displayDecoder1.display[5]
+display1[6] <= hex_7_seg:displayDecoder1.display[6]
+display2[0] <= hex_7_seg:displayDecoder2.display[0]
+display2[1] <= hex_7_seg:displayDecoder2.display[1]
+display2[2] <= hex_7_seg:displayDecoder2.display[2]
+display2[3] <= hex_7_seg:displayDecoder2.display[3]
+display2[4] <= hex_7_seg:displayDecoder2.display[4]
+display2[5] <= hex_7_seg:displayDecoder2.display[5]
+display2[6] <= hex_7_seg:displayDecoder2.display[6]
+sign <= process_0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|full_adder|complement_a1:operationType
+numIn[0] => numOut.DATAA
+numIn[0] => numOut.DATAB
+numIn[1] => numOut.DATAA
+numIn[1] => numOut.DATAB
+numIn[2] => numOut.DATAA
+numIn[2] => numOut.DATAB
+numIn[3] => numOut.DATAA
+numIn[3] => numOut.DATAB
+condition => numOut.OUTPUTSELECT
+condition => numOut.OUTPUTSELECT
+condition => numOut.OUTPUTSELECT
+condition => numOut.OUTPUTSELECT
+numOut[0] <= numOut.DB_MAX_OUTPUT_PORT_TYPE
+numOut[1] <= numOut.DB_MAX_OUTPUT_PORT_TYPE
+numOut[2] <= numOut.DB_MAX_OUTPUT_PORT_TYPE
+numOut[3] <= numOut.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|full_adder|adder_4bit:mainAdder
+a[0] => adder_1bit:bit0.a
+a[1] => adder_1bit:bit1.a
+a[2] => adder_1bit:bit2.a
+a[3] => adder_1bit:bit3.a
+b[0] => adder_1bit:bit0.b
+b[1] => adder_1bit:bit1.b
+b[2] => adder_1bit:bit2.b
+b[3] => adder_1bit:bit3.b
+cin => adder_1bit:bit0.cin
+c[0] <= adder_1bit:bit0.c
+c[1] <= adder_1bit:bit1.c
+c[2] <= adder_1bit:bit2.c
+c[3] <= adder_1bit:bit3.c
+c[4] <= adder_1bit:bit3.cout
+c[5] <= <GND>
+c[6] <= <GND>
+c[7] <= <GND>
+cout <= adder_1bit:bit3.cout
+
+
+|full_adder|adder_4bit:mainAdder|adder_1bit:bit0
+a => c.IN0
+a => cout.IN0
+a => cout.IN0
+b => c.IN1
+b => cout.IN1
+b => cout.IN0
+cin => c.IN1
+cin => cout.IN1
+cin => cout.IN1
+c <= c.DB_MAX_OUTPUT_PORT_TYPE
+cout <= cout.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|full_adder|adder_4bit:mainAdder|adder_1bit:bit1
+a => c.IN0
+a => cout.IN0
+a => cout.IN0
+b => c.IN1
+b => cout.IN1
+b => cout.IN0
+cin => c.IN1
+cin => cout.IN1
+cin => cout.IN1
+c <= c.DB_MAX_OUTPUT_PORT_TYPE
+cout <= cout.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|full_adder|adder_4bit:mainAdder|adder_1bit:bit2
+a => c.IN0
+a => cout.IN0
+a => cout.IN0
+b => c.IN1
+b => cout.IN1
+b => cout.IN0
+cin => c.IN1
+cin => cout.IN1
+cin => cout.IN1
+c <= c.DB_MAX_OUTPUT_PORT_TYPE
+cout <= cout.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|full_adder|adder_4bit:mainAdder|adder_1bit:bit3
+a => c.IN0
+a => cout.IN0
+a => cout.IN0
+b => c.IN1
+b => cout.IN1
+b => cout.IN0
+cin => c.IN1
+cin => cout.IN1
+cin => cout.IN1
+c <= c.DB_MAX_OUTPUT_PORT_TYPE
+cout <= cout.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|full_adder|comparator_8bit:comparator9
+a[0] => LessThan0.IN8
+a[0] => Equal0.IN7
+a[1] => LessThan0.IN7
+a[1] => Equal0.IN6
+a[2] => LessThan0.IN6
+a[2] => Equal0.IN5
+a[3] => LessThan0.IN5
+a[3] => Equal0.IN4
+a[4] => LessThan0.IN4
+a[4] => Equal0.IN3
+a[5] => LessThan0.IN3
+a[5] => Equal0.IN2
+a[6] => LessThan0.IN2
+a[6] => Equal0.IN1
+a[7] => LessThan0.IN1
+a[7] => Equal0.IN0
+b[0] => LessThan0.IN16
+b[0] => Equal0.IN15
+b[1] => LessThan0.IN15
+b[1] => Equal0.IN14
+b[2] => LessThan0.IN14
+b[2] => Equal0.IN13
+b[3] => LessThan0.IN13
+b[3] => Equal0.IN12
+b[4] => LessThan0.IN12
+b[4] => Equal0.IN11
+b[5] => LessThan0.IN11
+b[5] => Equal0.IN10
+b[6] => LessThan0.IN10
+b[6] => Equal0.IN9
+b[7] => LessThan0.IN9
+b[7] => Equal0.IN8
+result[0] <= result.DB_MAX_OUTPUT_PORT_TYPE
+result[1] <= result.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|full_adder|comparator_8bit:comparator19
+a[0] => LessThan0.IN8
+a[0] => Equal0.IN7
+a[1] => LessThan0.IN7
+a[1] => Equal0.IN6
+a[2] => LessThan0.IN6
+a[2] => Equal0.IN5
+a[3] => LessThan0.IN5
+a[3] => Equal0.IN4
+a[4] => LessThan0.IN4
+a[4] => Equal0.IN3
+a[5] => LessThan0.IN3
+a[5] => Equal0.IN2
+a[6] => LessThan0.IN2
+a[6] => Equal0.IN1
+a[7] => LessThan0.IN1
+a[7] => Equal0.IN0
+b[0] => LessThan0.IN16
+b[0] => Equal0.IN15
+b[1] => LessThan0.IN15
+b[1] => Equal0.IN14
+b[2] => LessThan0.IN14
+b[2] => Equal0.IN13
+b[3] => LessThan0.IN13
+b[3] => Equal0.IN12
+b[4] => LessThan0.IN12
+b[4] => Equal0.IN11
+b[5] => LessThan0.IN11
+b[5] => Equal0.IN10
+b[6] => LessThan0.IN10
+b[6] => Equal0.IN9
+b[7] => LessThan0.IN9
+b[7] => Equal0.IN8
+result[0] <= result.DB_MAX_OUTPUT_PORT_TYPE
+result[1] <= result.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|full_adder|comparator_8bit:comparator29
+a[0] => LessThan0.IN8
+a[0] => Equal0.IN7
+a[1] => LessThan0.IN7
+a[1] => Equal0.IN6
+a[2] => LessThan0.IN6
+a[2] => Equal0.IN5
+a[3] => LessThan0.IN5
+a[3] => Equal0.IN4
+a[4] => LessThan0.IN4
+a[4] => Equal0.IN3
+a[5] => LessThan0.IN3
+a[5] => Equal0.IN2
+a[6] => LessThan0.IN2
+a[6] => Equal0.IN1
+a[7] => LessThan0.IN1
+a[7] => Equal0.IN0
+b[0] => LessThan0.IN16
+b[0] => Equal0.IN15
+b[1] => LessThan0.IN15
+b[1] => Equal0.IN14
+b[2] => LessThan0.IN14
+b[2] => Equal0.IN13
+b[3] => LessThan0.IN13
+b[3] => Equal0.IN12
+b[4] => LessThan0.IN12
+b[4] => Equal0.IN11
+b[5] => LessThan0.IN11
+b[5] => Equal0.IN10
+b[6] => LessThan0.IN10
+b[6] => Equal0.IN9
+b[7] => LessThan0.IN9
+b[7] => Equal0.IN8
+result[0] <= result.DB_MAX_OUTPUT_PORT_TYPE
+result[1] <= result.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|full_adder|num_to_deco_7_seg:posAdder
+a[0] => adder_4bit:adder.a[0]
+a[1] => adder_4bit:adder.a[1]
+a[2] => adder_4bit:adder.a[2]
+a[3] => adder_4bit:adder.a[3]
+a[4] => ~NO_FANOUT~
+a[5] => ~NO_FANOUT~
+a[6] => ~NO_FANOUT~
+a[7] => ~NO_FANOUT~
+b[0] => format_7_seg:format.comparator[0]
+b[0] => Equal0.IN5
+b[0] => Equal1.IN5
+b[0] => Equal2.IN5
+b[0] => Equal3.IN2
+b[1] => format_7_seg:format.comparator[1]
+b[1] => Equal0.IN4
+b[1] => Equal1.IN4
+b[1] => Equal2.IN4
+b[1] => Equal3.IN5
+b[2] => format_7_seg:format.comparator[2]
+b[2] => Equal0.IN3
+b[2] => Equal1.IN1
+b[2] => Equal2.IN3
+b[2] => Equal3.IN4
+b[3] => format_7_seg:format.comparator[3]
+b[3] => Equal0.IN2
+b[3] => Equal1.IN3
+b[3] => Equal2.IN1
+b[3] => Equal3.IN1
+b[4] => format_7_seg:format.comparator[4]
+b[4] => Equal0.IN1
+b[4] => Equal1.IN2
+b[4] => Equal2.IN2
+b[4] => Equal3.IN3
+b[5] => format_7_seg:format.comparator[5]
+b[5] => Equal0.IN0
+b[5] => Equal1.IN0
+b[5] => Equal2.IN0
+b[5] => Equal3.IN0
+c[0] <= format_7_seg:format.b[0]
+c[1] <= format_7_seg:format.b[1]
+c[2] <= format_7_seg:format.b[2]
+c[3] <= format_7_seg:format.b[3]
+c[4] <= format_7_seg:format.b[4]
+c[5] <= format_7_seg:format.b[5]
+c[6] <= format_7_seg:format.b[6]
+c[7] <= format_7_seg:format.b[7]
+
+
+|full_adder|num_to_deco_7_seg:posAdder|adder_4bit:adder
+a[0] => adder_1bit:bit0.a
+a[1] => adder_1bit:bit1.a
+a[2] => adder_1bit:bit2.a
+a[3] => adder_1bit:bit3.a
+b[0] => adder_1bit:bit0.b
+b[1] => adder_1bit:bit1.b
+b[2] => adder_1bit:bit2.b
+b[3] => adder_1bit:bit3.b
+cin => adder_1bit:bit0.cin
+c[0] <= adder_1bit:bit0.c
+c[1] <= adder_1bit:bit1.c
+c[2] <= adder_1bit:bit2.c
+c[3] <= adder_1bit:bit3.c
+c[4] <= adder_1bit:bit3.cout
+c[5] <= <GND>
+c[6] <= <GND>
+c[7] <= <GND>
+cout <= adder_1bit:bit3.cout
+
+
+|full_adder|num_to_deco_7_seg:posAdder|adder_4bit:adder|adder_1bit:bit0
+a => c.IN0
+a => cout.IN0
+a => cout.IN0
+b => c.IN1
+b => cout.IN1
+b => cout.IN0
+cin => c.IN1
+cin => cout.IN1
+cin => cout.IN1
+c <= c.DB_MAX_OUTPUT_PORT_TYPE
+cout <= cout.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|full_adder|num_to_deco_7_seg:posAdder|adder_4bit:adder|adder_1bit:bit1
+a => c.IN0
+a => cout.IN0
+a => cout.IN0
+b => c.IN1
+b => cout.IN1
+b => cout.IN0
+cin => c.IN1
+cin => cout.IN1
+cin => cout.IN1
+c <= c.DB_MAX_OUTPUT_PORT_TYPE
+cout <= cout.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|full_adder|num_to_deco_7_seg:posAdder|adder_4bit:adder|adder_1bit:bit2
+a => c.IN0
+a => cout.IN0
+a => cout.IN0
+b => c.IN1
+b => cout.IN1
+b => cout.IN0
+cin => c.IN1
+cin => cout.IN1
+cin => cout.IN1
+c <= c.DB_MAX_OUTPUT_PORT_TYPE
+cout <= cout.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|full_adder|num_to_deco_7_seg:posAdder|adder_4bit:adder|adder_1bit:bit3
+a => c.IN0
+a => cout.IN0
+a => cout.IN0
+b => c.IN1
+b => cout.IN1
+b => cout.IN0
+cin => c.IN1
+cin => cout.IN1
+cin => cout.IN1
+c <= c.DB_MAX_OUTPUT_PORT_TYPE
+cout <= cout.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|full_adder|num_to_deco_7_seg:posAdder|format_7_seg:format
+a[0] => b.DATAA
+a[0] => b.DATAB
+a[0] => b.DATAB
+a[1] => b.DATAA
+a[1] => b.DATAB
+a[1] => b.DATAB
+a[2] => b.DATAA
+a[2] => b.DATAB
+a[2] => b.DATAB
+a[3] => b.DATAA
+a[3] => b.DATAB
+a[3] => b.DATAB
+a[4] => b.DATAA
+a[5] => b.DATAA
+a[5] => b.DATAB
+a[6] => b.DATAA
+a[6] => b.DATAB
+a[6] => b.DATAB
+a[7] => b.DATAA
+a[7] => b.DATAB
+a[7] => b.DATAB
+comparator[0] => Equal0.IN3
+comparator[0] => Equal1.IN5
+comparator[0] => Equal2.IN4
+comparator[0] => Equal3.IN3
+comparator[0] => Equal4.IN2
+comparator[1] => Equal0.IN2
+comparator[1] => Equal1.IN2
+comparator[1] => Equal2.IN3
+comparator[1] => Equal3.IN2
+comparator[1] => Equal4.IN5
+comparator[2] => Equal0.IN1
+comparator[2] => Equal1.IN1
+comparator[2] => Equal2.IN2
+comparator[2] => Equal3.IN5
+comparator[2] => Equal4.IN1
+comparator[3] => Equal0.IN5
+comparator[3] => Equal1.IN4
+comparator[3] => Equal2.IN1
+comparator[3] => Equal3.IN1
+comparator[3] => Equal4.IN4
+comparator[4] => Equal0.IN0
+comparator[4] => Equal1.IN0
+comparator[4] => Equal2.IN0
+comparator[4] => Equal3.IN0
+comparator[4] => Equal4.IN0
+comparator[5] => Equal0.IN4
+comparator[5] => Equal1.IN3
+comparator[5] => Equal2.IN5
+comparator[5] => Equal3.IN4
+comparator[5] => Equal4.IN3
+b[0] <= b.DB_MAX_OUTPUT_PORT_TYPE
+b[1] <= b.DB_MAX_OUTPUT_PORT_TYPE
+b[2] <= b.DB_MAX_OUTPUT_PORT_TYPE
+b[3] <= b.DB_MAX_OUTPUT_PORT_TYPE
+b[4] <= b.DB_MAX_OUTPUT_PORT_TYPE
+b[5] <= b.DB_MAX_OUTPUT_PORT_TYPE
+b[6] <= b.DB_MAX_OUTPUT_PORT_TYPE
+b[7] <= b.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|full_adder|comparator_8bit:negative
+a[0] => LessThan0.IN8
+a[0] => Equal0.IN7
+a[1] => LessThan0.IN7
+a[1] => Equal0.IN6
+a[2] => LessThan0.IN6
+a[2] => Equal0.IN5
+a[3] => LessThan0.IN5
+a[3] => Equal0.IN4
+a[4] => LessThan0.IN4
+a[4] => Equal0.IN3
+a[5] => LessThan0.IN3
+a[5] => Equal0.IN2
+a[6] => LessThan0.IN2
+a[6] => Equal0.IN1
+a[7] => LessThan0.IN1
+a[7] => Equal0.IN0
+b[0] => LessThan0.IN16
+b[0] => Equal0.IN15
+b[1] => LessThan0.IN15
+b[1] => Equal0.IN14
+b[2] => LessThan0.IN14
+b[2] => Equal0.IN13
+b[3] => LessThan0.IN13
+b[3] => Equal0.IN12
+b[4] => LessThan0.IN12
+b[4] => Equal0.IN11
+b[5] => LessThan0.IN11
+b[5] => Equal0.IN10
+b[6] => LessThan0.IN10
+b[6] => Equal0.IN9
+b[7] => LessThan0.IN9
+b[7] => Equal0.IN8
+result[0] <= result.DB_MAX_OUTPUT_PORT_TYPE
+result[1] <= result.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|full_adder|negative_to_positive_view:negative_to_positive
+a[0] => complement_a1:complement.numIn[0]
+a[1] => complement_a1:complement.numIn[1]
+a[2] => complement_a1:complement.numIn[2]
+a[3] => complement_a1:complement.numIn[3]
+a[4] => ~NO_FANOUT~
+a[5] => ~NO_FANOUT~
+a[6] => ~NO_FANOUT~
+a[7] => ~NO_FANOUT~
+negativeFlag[0] => Equal0.IN1
+negativeFlag[1] => Equal0.IN0
+b[0] <= negative_bit_4:bit4.b[0]
+b[1] <= negative_bit_4:bit4.b[1]
+b[2] <= negative_bit_4:bit4.b[2]
+b[3] <= negative_bit_4:bit4.b[3]
+b[4] <= negative_bit_4:bit4.b[4]
+b[5] <= negative_bit_4:bit4.b[5]
+b[6] <= negative_bit_4:bit4.b[6]
+b[7] <= negative_bit_4:bit4.b[7]
+
+
+|full_adder|negative_to_positive_view:negative_to_positive|complement_a1:complement
+numIn[0] => numOut.DATAA
+numIn[0] => numOut.DATAB
+numIn[1] => numOut.DATAA
+numIn[1] => numOut.DATAB
+numIn[2] => numOut.DATAA
+numIn[2] => numOut.DATAB
+numIn[3] => numOut.DATAA
+numIn[3] => numOut.DATAB
+condition => numOut.OUTPUTSELECT
+condition => numOut.OUTPUTSELECT
+condition => numOut.OUTPUTSELECT
+condition => numOut.OUTPUTSELECT
+numOut[0] <= numOut.DB_MAX_OUTPUT_PORT_TYPE
+numOut[1] <= numOut.DB_MAX_OUTPUT_PORT_TYPE
+numOut[2] <= numOut.DB_MAX_OUTPUT_PORT_TYPE
+numOut[3] <= numOut.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|full_adder|negative_to_positive_view:negative_to_positive|adder_4bit:adder
+a[0] => adder_1bit:bit0.a
+a[1] => adder_1bit:bit1.a
+a[2] => adder_1bit:bit2.a
+a[3] => adder_1bit:bit3.a
+b[0] => adder_1bit:bit0.b
+b[1] => adder_1bit:bit1.b
+b[2] => adder_1bit:bit2.b
+b[3] => adder_1bit:bit3.b
+cin => adder_1bit:bit0.cin
+c[0] <= adder_1bit:bit0.c
+c[1] <= adder_1bit:bit1.c
+c[2] <= adder_1bit:bit2.c
+c[3] <= adder_1bit:bit3.c
+c[4] <= adder_1bit:bit3.cout
+c[5] <= <GND>
+c[6] <= <GND>
+c[7] <= <GND>
+cout <= adder_1bit:bit3.cout
+
+
+|full_adder|negative_to_positive_view:negative_to_positive|adder_4bit:adder|adder_1bit:bit0
+a => c.IN0
+a => cout.IN0
+a => cout.IN0
+b => c.IN1
+b => cout.IN1
+b => cout.IN0
+cin => c.IN1
+cin => cout.IN1
+cin => cout.IN1
+c <= c.DB_MAX_OUTPUT_PORT_TYPE
+cout <= cout.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|full_adder|negative_to_positive_view:negative_to_positive|adder_4bit:adder|adder_1bit:bit1
+a => c.IN0
+a => cout.IN0
+a => cout.IN0
+b => c.IN1
+b => cout.IN1
+b => cout.IN0
+cin => c.IN1
+cin => cout.IN1
+cin => cout.IN1
+c <= c.DB_MAX_OUTPUT_PORT_TYPE
+cout <= cout.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|full_adder|negative_to_positive_view:negative_to_positive|adder_4bit:adder|adder_1bit:bit2
+a => c.IN0
+a => cout.IN0
+a => cout.IN0
+b => c.IN1
+b => cout.IN1
+b => cout.IN0
+cin => c.IN1
+cin => cout.IN1
+cin => cout.IN1
+c <= c.DB_MAX_OUTPUT_PORT_TYPE
+cout <= cout.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|full_adder|negative_to_positive_view:negative_to_positive|adder_4bit:adder|adder_1bit:bit3
+a => c.IN0
+a => cout.IN0
+a => cout.IN0
+b => c.IN1
+b => cout.IN1
+b => cout.IN0
+cin => c.IN1
+cin => cout.IN1
+cin => cout.IN1
+c <= c.DB_MAX_OUTPUT_PORT_TYPE
+cout <= cout.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|full_adder|negative_to_positive_view:negative_to_positive|negative_bit_4:bit4
+a[0] => b[0].DATAIN
+a[1] => b[1].DATAIN
+a[2] => b[2].DATAIN
+a[3] => b[3].DATAIN
+a[4] => ~NO_FANOUT~
+a[5] => b[5].DATAIN
+a[6] => b[6].DATAIN
+a[7] => b[7].DATAIN
+b[0] <= a[0].DB_MAX_OUTPUT_PORT_TYPE
+b[1] <= a[1].DB_MAX_OUTPUT_PORT_TYPE
+b[2] <= a[2].DB_MAX_OUTPUT_PORT_TYPE
+b[3] <= a[3].DB_MAX_OUTPUT_PORT_TYPE
+b[4] <= <GND>
+b[5] <= a[5].DB_MAX_OUTPUT_PORT_TYPE
+b[6] <= a[6].DB_MAX_OUTPUT_PORT_TYPE
+b[7] <= a[7].DB_MAX_OUTPUT_PORT_TYPE
+
+
+|full_adder|comparator_8bit:comparatorNegative
+a[0] => LessThan0.IN8
+a[0] => Equal0.IN7
+a[1] => LessThan0.IN7
+a[1] => Equal0.IN6
+a[2] => LessThan0.IN6
+a[2] => Equal0.IN5
+a[3] => LessThan0.IN5
+a[3] => Equal0.IN4
+a[4] => LessThan0.IN4
+a[4] => Equal0.IN3
+a[5] => LessThan0.IN3
+a[5] => Equal0.IN2
+a[6] => LessThan0.IN2
+a[6] => Equal0.IN1
+a[7] => LessThan0.IN1
+a[7] => Equal0.IN0
+b[0] => LessThan0.IN16
+b[0] => Equal0.IN15
+b[1] => LessThan0.IN15
+b[1] => Equal0.IN14
+b[2] => LessThan0.IN14
+b[2] => Equal0.IN13
+b[3] => LessThan0.IN13
+b[3] => Equal0.IN12
+b[4] => LessThan0.IN12
+b[4] => Equal0.IN11
+b[5] => LessThan0.IN11
+b[5] => Equal0.IN10
+b[6] => LessThan0.IN10
+b[6] => Equal0.IN9
+b[7] => LessThan0.IN9
+b[7] => Equal0.IN8
+result[0] <= result.DB_MAX_OUTPUT_PORT_TYPE
+result[1] <= result.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|full_adder|num_to_deco_7_seg:negAdder
+a[0] => adder_4bit:adder.a[0]
+a[1] => adder_4bit:adder.a[1]
+a[2] => adder_4bit:adder.a[2]
+a[3] => adder_4bit:adder.a[3]
+a[4] => ~NO_FANOUT~
+a[5] => ~NO_FANOUT~
+a[6] => ~NO_FANOUT~
+a[7] => ~NO_FANOUT~
+b[0] => format_7_seg:format.comparator[0]
+b[0] => Equal0.IN5
+b[0] => Equal1.IN5
+b[0] => Equal2.IN5
+b[0] => Equal3.IN2
+b[1] => format_7_seg:format.comparator[1]
+b[1] => Equal0.IN4
+b[1] => Equal1.IN4
+b[1] => Equal2.IN4
+b[1] => Equal3.IN5
+b[2] => format_7_seg:format.comparator[2]
+b[2] => Equal0.IN3
+b[2] => Equal1.IN1
+b[2] => Equal2.IN3
+b[2] => Equal3.IN4
+b[3] => format_7_seg:format.comparator[3]
+b[3] => Equal0.IN2
+b[3] => Equal1.IN3
+b[3] => Equal2.IN1
+b[3] => Equal3.IN1
+b[4] => format_7_seg:format.comparator[4]
+b[4] => Equal0.IN1
+b[4] => Equal1.IN2
+b[4] => Equal2.IN2
+b[4] => Equal3.IN3
+b[5] => format_7_seg:format.comparator[5]
+b[5] => Equal0.IN0
+b[5] => Equal1.IN0
+b[5] => Equal2.IN0
+b[5] => Equal3.IN0
+c[0] <= format_7_seg:format.b[0]
+c[1] <= format_7_seg:format.b[1]
+c[2] <= format_7_seg:format.b[2]
+c[3] <= format_7_seg:format.b[3]
+c[4] <= format_7_seg:format.b[4]
+c[5] <= format_7_seg:format.b[5]
+c[6] <= format_7_seg:format.b[6]
+c[7] <= format_7_seg:format.b[7]
+
+
+|full_adder|num_to_deco_7_seg:negAdder|adder_4bit:adder
+a[0] => adder_1bit:bit0.a
+a[1] => adder_1bit:bit1.a
+a[2] => adder_1bit:bit2.a
+a[3] => adder_1bit:bit3.a
+b[0] => adder_1bit:bit0.b
+b[1] => adder_1bit:bit1.b
+b[2] => adder_1bit:bit2.b
+b[3] => adder_1bit:bit3.b
+cin => adder_1bit:bit0.cin
+c[0] <= adder_1bit:bit0.c
+c[1] <= adder_1bit:bit1.c
+c[2] <= adder_1bit:bit2.c
+c[3] <= adder_1bit:bit3.c
+c[4] <= adder_1bit:bit3.cout
+c[5] <= <GND>
+c[6] <= <GND>
+c[7] <= <GND>
+cout <= adder_1bit:bit3.cout
+
+
+|full_adder|num_to_deco_7_seg:negAdder|adder_4bit:adder|adder_1bit:bit0
+a => c.IN0
+a => cout.IN0
+a => cout.IN0
+b => c.IN1
+b => cout.IN1
+b => cout.IN0
+cin => c.IN1
+cin => cout.IN1
+cin => cout.IN1
+c <= c.DB_MAX_OUTPUT_PORT_TYPE
+cout <= cout.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|full_adder|num_to_deco_7_seg:negAdder|adder_4bit:adder|adder_1bit:bit1
+a => c.IN0
+a => cout.IN0
+a => cout.IN0
+b => c.IN1
+b => cout.IN1
+b => cout.IN0
+cin => c.IN1
+cin => cout.IN1
+cin => cout.IN1
+c <= c.DB_MAX_OUTPUT_PORT_TYPE
+cout <= cout.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|full_adder|num_to_deco_7_seg:negAdder|adder_4bit:adder|adder_1bit:bit2
+a => c.IN0
+a => cout.IN0
+a => cout.IN0
+b => c.IN1
+b => cout.IN1
+b => cout.IN0
+cin => c.IN1
+cin => cout.IN1
+cin => cout.IN1
+c <= c.DB_MAX_OUTPUT_PORT_TYPE
+cout <= cout.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|full_adder|num_to_deco_7_seg:negAdder|adder_4bit:adder|adder_1bit:bit3
+a => c.IN0
+a => cout.IN0
+a => cout.IN0
+b => c.IN1
+b => cout.IN1
+b => cout.IN0
+cin => c.IN1
+cin => cout.IN1
+cin => cout.IN1
+c <= c.DB_MAX_OUTPUT_PORT_TYPE
+cout <= cout.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|full_adder|num_to_deco_7_seg:negAdder|format_7_seg:format
+a[0] => b.DATAA
+a[0] => b.DATAB
+a[0] => b.DATAB
+a[1] => b.DATAA
+a[1] => b.DATAB
+a[1] => b.DATAB
+a[2] => b.DATAA
+a[2] => b.DATAB
+a[2] => b.DATAB
+a[3] => b.DATAA
+a[3] => b.DATAB
+a[3] => b.DATAB
+a[4] => b.DATAA
+a[5] => b.DATAA
+a[5] => b.DATAB
+a[6] => b.DATAA
+a[6] => b.DATAB
+a[6] => b.DATAB
+a[7] => b.DATAA
+a[7] => b.DATAB
+a[7] => b.DATAB
+comparator[0] => Equal0.IN3
+comparator[0] => Equal1.IN5
+comparator[0] => Equal2.IN4
+comparator[0] => Equal3.IN3
+comparator[0] => Equal4.IN2
+comparator[1] => Equal0.IN2
+comparator[1] => Equal1.IN2
+comparator[1] => Equal2.IN3
+comparator[1] => Equal3.IN2
+comparator[1] => Equal4.IN5
+comparator[2] => Equal0.IN1
+comparator[2] => Equal1.IN1
+comparator[2] => Equal2.IN2
+comparator[2] => Equal3.IN5
+comparator[2] => Equal4.IN1
+comparator[3] => Equal0.IN5
+comparator[3] => Equal1.IN4
+comparator[3] => Equal2.IN1
+comparator[3] => Equal3.IN1
+comparator[3] => Equal4.IN4
+comparator[4] => Equal0.IN0
+comparator[4] => Equal1.IN0
+comparator[4] => Equal2.IN0
+comparator[4] => Equal3.IN0
+comparator[4] => Equal4.IN0
+comparator[5] => Equal0.IN4
+comparator[5] => Equal1.IN3
+comparator[5] => Equal2.IN5
+comparator[5] => Equal3.IN4
+comparator[5] => Equal4.IN3
+b[0] <= b.DB_MAX_OUTPUT_PORT_TYPE
+b[1] <= b.DB_MAX_OUTPUT_PORT_TYPE
+b[2] <= b.DB_MAX_OUTPUT_PORT_TYPE
+b[3] <= b.DB_MAX_OUTPUT_PORT_TYPE
+b[4] <= b.DB_MAX_OUTPUT_PORT_TYPE
+b[5] <= b.DB_MAX_OUTPUT_PORT_TYPE
+b[6] <= b.DB_MAX_OUTPUT_PORT_TYPE
+b[7] <= b.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|full_adder|mux_8bit:selectOperation
+a[0] => c.DATAB
+a[1] => c.DATAB
+a[2] => c.DATAB
+a[3] => c.DATAB
+a[4] => c.DATAB
+a[5] => c.DATAB
+a[6] => c.DATAB
+a[7] => c.DATAB
+b[0] => c.DATAA
+b[1] => c.DATAA
+b[2] => c.DATAA
+b[3] => c.DATAA
+b[4] => c.DATAA
+b[5] => c.DATAA
+b[6] => c.DATAA
+b[7] => c.DATAA
+condition => c.OUTPUTSELECT
+condition => c.OUTPUTSELECT
+condition => c.OUTPUTSELECT
+condition => c.OUTPUTSELECT
+condition => c.OUTPUTSELECT
+condition => c.OUTPUTSELECT
+condition => c.OUTPUTSELECT
+condition => c.OUTPUTSELECT
+c[0] <= c.DB_MAX_OUTPUT_PORT_TYPE
+c[1] <= c.DB_MAX_OUTPUT_PORT_TYPE
+c[2] <= c.DB_MAX_OUTPUT_PORT_TYPE
+c[3] <= c.DB_MAX_OUTPUT_PORT_TYPE
+c[4] <= c.DB_MAX_OUTPUT_PORT_TYPE
+c[5] <= c.DB_MAX_OUTPUT_PORT_TYPE
+c[6] <= c.DB_MAX_OUTPUT_PORT_TYPE
+c[7] <= c.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|full_adder|hex_7_seg:displayDecoder1
+enable => deco_7:decoder.enable
+inputHex[0] => deco_7:decoder.inputHex[0]
+inputHex[1] => deco_7:decoder.inputHex[1]
+inputHex[2] => deco_7:decoder.inputHex[2]
+inputHex[3] => deco_7:decoder.inputHex[3]
+display[0] <= deco_7:decoder.display[0]
+display[1] <= deco_7:decoder.display[1]
+display[2] <= deco_7:decoder.display[2]
+display[3] <= deco_7:decoder.display[3]
+display[4] <= deco_7:decoder.display[4]
+display[5] <= deco_7:decoder.display[5]
+display[6] <= deco_7:decoder.display[6]
+
+
+|full_adder|hex_7_seg:displayDecoder1|deco_7:decoder
+enable => display.OUTPUTSELECT
+enable => display.OUTPUTSELECT
+enable => display.OUTPUTSELECT
+enable => display.OUTPUTSELECT
+enable => display.OUTPUTSELECT
+enable => display.OUTPUTSELECT
+enable => display.OUTPUTSELECT
+inputHex[0] => Mux0.IN19
+inputHex[0] => Mux1.IN19
+inputHex[0] => Mux2.IN19
+inputHex[0] => Mux3.IN19
+inputHex[0] => Mux4.IN19
+inputHex[0] => Mux5.IN19
+inputHex[0] => Mux6.IN19
+inputHex[1] => Mux0.IN18
+inputHex[1] => Mux1.IN18
+inputHex[1] => Mux2.IN18
+inputHex[1] => Mux3.IN18
+inputHex[1] => Mux4.IN18
+inputHex[1] => Mux5.IN18
+inputHex[1] => Mux6.IN18
+inputHex[2] => Mux0.IN17
+inputHex[2] => Mux1.IN17
+inputHex[2] => Mux2.IN17
+inputHex[2] => Mux3.IN17
+inputHex[2] => Mux4.IN17
+inputHex[2] => Mux5.IN17
+inputHex[2] => Mux6.IN17
+inputHex[3] => Mux0.IN16
+inputHex[3] => Mux1.IN16
+inputHex[3] => Mux2.IN16
+inputHex[3] => Mux3.IN16
+inputHex[3] => Mux4.IN16
+inputHex[3] => Mux5.IN16
+inputHex[3] => Mux6.IN16
+display[0] <= display.DB_MAX_OUTPUT_PORT_TYPE
+display[1] <= display.DB_MAX_OUTPUT_PORT_TYPE
+display[2] <= display.DB_MAX_OUTPUT_PORT_TYPE
+display[3] <= display.DB_MAX_OUTPUT_PORT_TYPE
+display[4] <= display.DB_MAX_OUTPUT_PORT_TYPE
+display[5] <= display.DB_MAX_OUTPUT_PORT_TYPE
+display[6] <= display.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|full_adder|hex_7_seg:displayDecoder2
+enable => deco_7:decoder.enable
+inputHex[0] => deco_7:decoder.inputHex[0]
+inputHex[1] => deco_7:decoder.inputHex[1]
+inputHex[2] => deco_7:decoder.inputHex[2]
+inputHex[3] => deco_7:decoder.inputHex[3]
+display[0] <= deco_7:decoder.display[0]
+display[1] <= deco_7:decoder.display[1]
+display[2] <= deco_7:decoder.display[2]
+display[3] <= deco_7:decoder.display[3]
+display[4] <= deco_7:decoder.display[4]
+display[5] <= deco_7:decoder.display[5]
+display[6] <= deco_7:decoder.display[6]
+
+
+|full_adder|hex_7_seg:displayDecoder2|deco_7:decoder
+enable => display.OUTPUTSELECT
+enable => display.OUTPUTSELECT
+enable => display.OUTPUTSELECT
+enable => display.OUTPUTSELECT
+enable => display.OUTPUTSELECT
+enable => display.OUTPUTSELECT
+enable => display.OUTPUTSELECT
+inputHex[0] => Mux0.IN19
+inputHex[0] => Mux1.IN19
+inputHex[0] => Mux2.IN19
+inputHex[0] => Mux3.IN19
+inputHex[0] => Mux4.IN19
+inputHex[0] => Mux5.IN19
+inputHex[0] => Mux6.IN19
+inputHex[1] => Mux0.IN18
+inputHex[1] => Mux1.IN18
+inputHex[1] => Mux2.IN18
+inputHex[1] => Mux3.IN18
+inputHex[1] => Mux4.IN18
+inputHex[1] => Mux5.IN18
+inputHex[1] => Mux6.IN18
+inputHex[2] => Mux0.IN17
+inputHex[2] => Mux1.IN17
+inputHex[2] => Mux2.IN17
+inputHex[2] => Mux3.IN17
+inputHex[2] => Mux4.IN17
+inputHex[2] => Mux5.IN17
+inputHex[2] => Mux6.IN17
+inputHex[3] => Mux0.IN16
+inputHex[3] => Mux1.IN16
+inputHex[3] => Mux2.IN16
+inputHex[3] => Mux3.IN16
+inputHex[3] => Mux4.IN16
+inputHex[3] => Mux5.IN16
+inputHex[3] => Mux6.IN16
+display[0] <= display.DB_MAX_OUTPUT_PORT_TYPE
+display[1] <= display.DB_MAX_OUTPUT_PORT_TYPE
+display[2] <= display.DB_MAX_OUTPUT_PORT_TYPE
+display[3] <= display.DB_MAX_OUTPUT_PORT_TYPE
+display[4] <= display.DB_MAX_OUTPUT_PORT_TYPE
+display[5] <= display.DB_MAX_OUTPUT_PORT_TYPE
+display[6] <= display.DB_MAX_OUTPUT_PORT_TYPE
+
+

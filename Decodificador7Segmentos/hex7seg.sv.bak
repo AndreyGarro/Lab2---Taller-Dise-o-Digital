@@ -1,0 +1,15 @@
+module hex7seg(display, inputHex, enable, point);
+
+output [6:0] display;
+
+output point;
+
+input [3:0] inputHex;
+
+input enable;
+
+deco_7 deco(display, inputHex, enable);
+
+assign point = 1'b1;
+
+endmodule

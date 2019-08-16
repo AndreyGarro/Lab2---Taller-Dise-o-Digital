@@ -1,0 +1,29 @@
+library IEEE; use IEEE.STD_LOGIC_1164.all;
+
+entity complement_a1(numIn, condition, numOut) is
+
+	port(numIn : in STD_LOGIC_VECTOR(3 downto 0);
+		  condition : in STD_LOGIC;
+		  numOut : out STD_LOGIC_VECTOR(3 downto 0));
+
+end complement_a1;
+
+/*module comp_a1(num_in, condition, num_out);
+
+	input wire [3:0] num_in;
+	
+	input wire condition;
+	
+	output reg [3:0] num_out;
+	
+	always@(num_in, condition, num_out)
+	begin
+	
+	if (condition == 1)
+		num_out = ~num_in;
+	else
+		num_out = num_in;
+	
+	end
+	
+endmodule*/

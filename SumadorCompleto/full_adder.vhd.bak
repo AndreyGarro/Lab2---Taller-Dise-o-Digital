@@ -1,0 +1,119 @@
+library ieee; use ieee.std_logic_1164.all;
+
+/*module full_adder(a, b, cin, enable, display1, display2, sign);
+
+input wire [3:0] a;
+input wire [3:0] b;
+input wire cin;
+reg [7:0] c;
+input reg enable;
+reg cout;
+
+output reg sign;
+
+wire [3:0] modified_b;
+wire [7:0] new_c;
+
+comp_a1 operationType(
+	.num_in(b),
+	.condition(cin),
+	.num_out(modified_b));
+
+adder_4bit mainAdder(
+	.a(a),
+	.b(modified_b),
+	.cin(cin),
+	.c(new_c),
+	.cout(cout));
+
+// SUMA
+	
+wire [5:0] comparator_results;
+	
+comparator_4bit comparator9(
+	.a(new_c),
+	.b(8'b00001001),
+	.result(comparator_results[4+:2]));
+	
+comparator_4bit comparator19(
+	.a(new_c),
+	.b(8'b00010011),
+	.result(comparator_results[2+:2]));
+	
+comparator_4bit comparator29(
+	.a(new_c),
+	.b(8'b00011101),
+	.result(comparator_results[0+:2]));
+
+reg [7:0] c_sum;
+	
+num_to_deco_7_seg posAdder(
+	.a(new_c),
+	.b(comparator_results),
+	.c(c_sum));
+	
+// RESTA
+	
+wire [1:0] isNegative;
+wire [7:0] new_a;
+assign new_a = {4'b0000, a};
+wire [7:0] new_b;
+assign new_b = {4'b0000, b};
+	
+comparator_4bit negative(
+	.a(new_a),
+	.b(new_b),
+	.result(isNegative));
+	
+reg [7:0] positive_c;
+	
+negative_to_positive_view negative_to_positive(
+	.a(new_c),
+	.negative_flag(isNegative),
+	.b(positive_c));
+
+wire [5:0] comparator_negative_results;
+assign comparator_negative_results[0+:4] = 4'b0000;
+	
+comparator_4bit comparatorNegative(
+	.a(positive_c),
+	.b(8'b00001001),
+	.result(comparator_negative_results[4+:2]));
+	
+reg [7:0] c_res;
+	
+num_to_deco_7_seg negAdder(
+	.a(positive_c),
+	.b(comparator_negative_results),
+	.c(c_res));
+
+// MUX
+
+mux_8bit selectOperation(
+	.a(c_sum),
+	.b(c_res),
+	.condition(cin),
+	.c(c));
+
+output reg [6:0] display1;
+output reg [6:0] display2;
+	
+hex7seg displayDecoder1(
+	.display(display1),
+	.inputHex(c[0+:4]),
+	.enable(enable));
+	
+hex7seg displayDecoder2(
+	.display(display2),
+	.inputHex(c[4+:4]),
+	.enable(enable));
+	
+	always@(a, b, cin, enable) begin
+		if(isNegative == 2'b00 & enable == 1 & cin == 1)
+			sign = 0;
+		else
+			sign = 1;
+	end
+	
+endmodule
+*/

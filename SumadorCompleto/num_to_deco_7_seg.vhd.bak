@@ -1,0 +1,36 @@
+library ieee; use ieee.std_logic_1164.all;
+
+/*module num_to_deco_7_seg(a, b, c);
+
+	input wire [7:0] a;
+	input wire [5:0] b;
+	output reg [7:0] c;
+	reg [7:0] c_test;
+	
+	logic [3:0] extraData;
+	reg cout;
+	
+	adder_4bit adder(
+	.a(a[0+:4]),
+	.b(extraData),
+	.cin(0),
+	.c(c_test),
+	.cout(cout));
+	
+	format_7_seg format(
+	.a(c_test),
+	.comparator(b),
+	.b(c));
+	
+	always@(a, b) begin
+	
+		if (b == 6'b100000 | b == 6'b100100)
+			extraData = 4'b0110;
+		else if (b == 6'b101000 | b == 6'b101001)
+			extraData = 4'b1100;
+		else
+			extraData = 4'b0000;
+	end
+
+endmodule
+*/

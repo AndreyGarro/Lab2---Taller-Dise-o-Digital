@@ -1,0 +1,55 @@
+library ieee; use ieee.std_logic_1164.all;
+
+/*module adder_4bit(a, b, cin, c, cout);
+
+	input wire [3:0] a;
+	input wire [3:0] b;
+	input wire cin;
+	output reg [7:0] c;
+	output reg cout;
+	
+	assign c[5+:3] = 3'b000;
+	
+	wire cout0;
+	wire cout1;
+	wire cout2;
+
+	adder_1bit bit0(
+	.a(a[0]),
+	.b(b[0]),
+	.cin(cin),
+	.c(c[0]),
+	.cout(cout0));
+	
+	adder_1bit bit1(
+	.a(a[1]),
+	.b(b[1]),
+	.cin(cout0),
+	.c(c[1]),
+	.cout(cout1));
+	
+	adder_1bit bit2(
+	.a(a[2]),
+	.b(b[2]),
+	.cin(cout1),
+	.c(c[2]),
+	.cout(cout2));
+	
+	adder_1bit bit3(
+	.a(a[3]),
+	.b(b[3]),
+	.cin(cout2),
+	.c(c[3]),
+	.cout(cout));
+	
+	always@(a,b,cin) begin
+	
+		if (cout == 1)
+			c[4] = 1;
+		else
+			c[4] = 0;
+	
+	end
+	
+endmodule
+*/

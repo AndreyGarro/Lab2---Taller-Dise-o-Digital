@@ -1,0 +1,85 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dC:/Users/este0/Desktop/Esteban/TEC/2019 - II Semestre/Taller de Diseno Digital/Lab2Ex1/simulation/modelsim
+vdeco_7
+Z1 DXx6 sv_std 3 std 0 22 AD7iAPLo6nTIKk<N0eo=D3
+Z2 !s110 1565928401
+!i10b 1
+!s100 ^bbf;jIH1NVAUZghK6KSF1
+IH8@Q7@i>EmR@Ce:L^3QVJ3
+Z3 VDg1SIo80bB@j0V0VzS_@n1
+!s105 deco_7_sv_unit
+S1
+R0
+w1565905142
+8C:/Users/este0/Desktop/Esteban/TEC/2019 - II Semestre/Taller de Diseno Digital/Lab2Ex1/deco_7.sv
+FC:/Users/este0/Desktop/Esteban/TEC/2019 - II Semestre/Taller de Diseno Digital/Lab2Ex1/deco_7.sv
+L0 1
+Z4 OV;L;10.5b;63
+r1
+!s85 0
+31
+Z5 !s108 1565928401.000000
+!s107 C:/Users/este0/Desktop/Esteban/TEC/2019 - II Semestre/Taller de Diseno Digital/Lab2Ex1/deco_7.sv|
+!s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/este0/Desktop/Esteban/TEC/2019 - II Semestre/Taller de Diseno Digital/Lab2Ex1|C:/Users/este0/Desktop/Esteban/TEC/2019 - II Semestre/Taller de Diseno Digital/Lab2Ex1/deco_7.sv|
+!i113 1
+Z6 o-sv -work work
+Z7 !s92 -sv -work work {+incdir+C:/Users/este0/Desktop/Esteban/TEC/2019 - II Semestre/Taller de Diseno Digital/Lab2Ex1}
+Z8 tCvgOpt 0
+vdeco_hex7seg_test
+R1
+R2
+!i10b 1
+!s100 GRCDgc:bWO`EbQQhACA?N2
+I0TOiVQkFQUg3W57Z@^DQ13
+R3
+!s105 deco_hex7seg_test_sv_unit
+S1
+R0
+w1565904974
+8C:/Users/este0/Desktop/Esteban/TEC/2019 - II Semestre/Taller de Diseno Digital/Lab2Ex1/deco_hex7seg_test.sv
+FC:/Users/este0/Desktop/Esteban/TEC/2019 - II Semestre/Taller de Diseno Digital/Lab2Ex1/deco_hex7seg_test.sv
+L0 1
+R4
+r1
+!s85 0
+31
+R5
+!s107 C:/Users/este0/Desktop/Esteban/TEC/2019 - II Semestre/Taller de Diseno Digital/Lab2Ex1/deco_hex7seg_test.sv|
+!s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/este0/Desktop/Esteban/TEC/2019 - II Semestre/Taller de Diseno Digital/Lab2Ex1|C:/Users/este0/Desktop/Esteban/TEC/2019 - II Semestre/Taller de Diseno Digital/Lab2Ex1/deco_hex7seg_test.sv|
+!i113 1
+R6
+R7
+R8
+vhex7seg
+R1
+R2
+!i10b 1
+!s100 5cXACQ@^e11jaSTS9RbdR2
+INUg9F8Y__a=D@^A`?EhoP1
+R3
+!s105 hex7seg_sv_unit
+S1
+R0
+w1565905153
+8C:/Users/este0/Desktop/Esteban/TEC/2019 - II Semestre/Taller de Diseno Digital/Lab2Ex1/hex7seg.sv
+FC:/Users/este0/Desktop/Esteban/TEC/2019 - II Semestre/Taller de Diseno Digital/Lab2Ex1/hex7seg.sv
+L0 1
+R4
+r1
+!s85 0
+31
+R5
+!s107 C:/Users/este0/Desktop/Esteban/TEC/2019 - II Semestre/Taller de Diseno Digital/Lab2Ex1/hex7seg.sv|
+!s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/este0/Desktop/Esteban/TEC/2019 - II Semestre/Taller de Diseno Digital/Lab2Ex1|C:/Users/este0/Desktop/Esteban/TEC/2019 - II Semestre/Taller de Diseno Digital/Lab2Ex1/hex7seg.sv|
+!i113 1
+R6
+R7
+R8

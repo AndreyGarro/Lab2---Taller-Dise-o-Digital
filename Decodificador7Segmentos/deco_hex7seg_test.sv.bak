@@ -1,0 +1,36 @@
+'timescale 1ns/1ps
+
+'define SIMULATION
+
+module deco_hex7seg_test();
+
+wire [6:0] display;
+wire point;
+reg [3:0] inputHex;
+reg enable;
+parameter counter = 16;
+parameter stop_time = (counter + 1) * 10
+
+hex7seg DUT(display, inputHex, enable, point);
+
+initial # stop_time $finish;
+
+initial begin: TEST_STIMULUS
+
+enable = 1; inputHex = 0;
+#10
+enable = 1; inputHex = 0;
+repeat(counter-1)
+#10
+inputHex = inputHex + 1;
+
+end
+
+initial # stop_time $finish;
+initial begin: TEST_WAVE
+$dumpfile("deco_hex7seg_test.vcd");
+$dumpvars (1,DUT);
+
+end
+
+endmodule
