@@ -1,0 +1,21 @@
+module analizadorBits(ent, sal)
+	
+	input wire [5:0] ent;
+	output reg [6:0] sal;
+	
+	always @(ent) begin
+		
+		for(int i = 0; i < 5; i++) begin
+			if(i == 4) begin
+				if(ent[4+:2] == 01)
+					sal = 6'b000000
+				else
+					break;
+			end
+			else if(ent[i+:2] == 01)
+				sal = 6'b000000;
+				break;
+		end
+	end
+	
+endmodule

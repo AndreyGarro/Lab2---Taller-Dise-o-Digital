@@ -1,0 +1,24 @@
+module test ();
+
+	logic j;
+	logic k;
+	logic ena;
+	logic rst;
+	logic clk;
+	reg q;
+		
+	flipflopJK dut(j, k, ena, rst, clk, q);
+	
+	initial begin
+		
+		#10 j = 0; k = 0; ena = 1; clk = 1; rst = 0;
+		#10 clk = 0;
+		#10 j = 0; k = 1; clk = 1;
+		#10 clk = 0;
+		#10 j = 1; k = 0; clk = 1;
+		#10 clk = 0;
+		#10 j = 1; k = 1; clk = 1;
+		
+	end
+	
+endmodule

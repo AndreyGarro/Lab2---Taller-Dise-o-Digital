@@ -1,0 +1,218 @@
+|contadorAsincronico
+nBits[0] => nBits[0].IN1
+nBits[1] => nBits[1].IN1
+nBits[2] => nBits[2].IN1
+nBits[3] => nBits[3].IN1
+nBits[4] => nBits[4].IN1
+nBits[5] => nBits[5].IN1
+clk => clk.IN1
+rst => rst.IN1
+disp[0] << hex7seg:disp1.display
+disp[1] << hex7seg:disp1.display
+disp[2] << hex7seg:disp1.display
+disp[3] << hex7seg:disp1.display
+disp[4] << hex7seg:disp1.display
+disp[5] << hex7seg:disp1.display
+disp[6] << hex7seg:disp1.display
+disp[7] << hex7seg:disp2.display
+disp[8] << hex7seg:disp2.display
+disp[9] << hex7seg:disp2.display
+disp[10] << hex7seg:disp2.display
+disp[11] << hex7seg:disp2.display
+disp[12] << hex7seg:disp2.display
+disp[13] << hex7seg:disp2.display
+
+
+|contadorAsincronico|analizadorBits:analyzer
+ent[0] => sal.DATAA
+ent[0] => Equal0.IN1
+ent[1] => sal.DATAA
+ent[1] => Equal0.IN0
+ent[1] => Equal1.IN1
+ent[2] => sal.DATAA
+ent[2] => Equal1.IN0
+ent[2] => Equal2.IN1
+ent[3] => sal.DATAA
+ent[3] => Equal2.IN0
+ent[3] => Equal3.IN1
+ent[4] => sal.DATAA
+ent[4] => Equal3.IN0
+ent[4] => Equal4.IN1
+ent[5] => sal.DATAA
+ent[5] => Equal4.IN0
+sal[0] <= sal.DB_MAX_OUTPUT_PORT_TYPE
+sal[1] <= sal.DB_MAX_OUTPUT_PORT_TYPE
+sal[2] <= sal.DB_MAX_OUTPUT_PORT_TYPE
+sal[3] <= sal.DB_MAX_OUTPUT_PORT_TYPE
+sal[4] <= sal.DB_MAX_OUTPUT_PORT_TYPE
+sal[5] <= sal.DB_MAX_OUTPUT_PORT_TYPE
+sal[6] <= <GND>
+
+
+|contadorAsincronico|contador:cont
+cantFF[0] => cantFF[0].IN1
+cantFF[1] => cantFF[1].IN1
+cantFF[2] => cantFF[2].IN1
+cantFF[3] => cantFF[3].IN1
+cantFF[4] => cantFF[4].IN1
+cantFF[5] => cantFF[5].IN1
+clk => clk.IN1
+rst => rst.IN6
+num[0] <= num[0].DB_MAX_OUTPUT_PORT_TYPE
+num[1] <= num[1].DB_MAX_OUTPUT_PORT_TYPE
+num[2] <= num[2].DB_MAX_OUTPUT_PORT_TYPE
+num[3] <= num[3].DB_MAX_OUTPUT_PORT_TYPE
+num[4] <= num[4].DB_MAX_OUTPUT_PORT_TYPE
+num[5] <= flipflopJK:ff5.q
+
+
+|contadorAsincronico|contador:cont|flipflopJK:ff0
+j => always0.IN0
+j => always0.IN0
+j => always0.IN0
+k => always0.IN1
+k => always0.IN1
+k => always0.IN1
+ena => always0.IN0
+rst => always0.IN1
+clk => q~reg0.CLK
+q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|contadorAsincronico|contador:cont|flipflopJK:ff1
+j => always0.IN0
+j => always0.IN0
+j => always0.IN0
+k => always0.IN1
+k => always0.IN1
+k => always0.IN1
+ena => always0.IN0
+rst => always0.IN1
+clk => q~reg0.CLK
+q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|contadorAsincronico|contador:cont|flipflopJK:ff2
+j => always0.IN0
+j => always0.IN0
+j => always0.IN0
+k => always0.IN1
+k => always0.IN1
+k => always0.IN1
+ena => always0.IN0
+rst => always0.IN1
+clk => q~reg0.CLK
+q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|contadorAsincronico|contador:cont|flipflopJK:ff3
+j => always0.IN0
+j => always0.IN0
+j => always0.IN0
+k => always0.IN1
+k => always0.IN1
+k => always0.IN1
+ena => always0.IN0
+rst => always0.IN1
+clk => q~reg0.CLK
+q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|contadorAsincronico|contador:cont|flipflopJK:ff4
+j => always0.IN0
+j => always0.IN0
+j => always0.IN0
+k => always0.IN1
+k => always0.IN1
+k => always0.IN1
+ena => always0.IN0
+rst => always0.IN1
+clk => q~reg0.CLK
+q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|contadorAsincronico|contador:cont|flipflopJK:ff5
+j => always0.IN0
+j => always0.IN0
+j => always0.IN0
+k => always0.IN1
+k => always0.IN1
+k => always0.IN1
+ena => always0.IN0
+rst => always0.IN1
+clk => q~reg0.CLK
+q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|contadorAsincronico|hex7seg:disp1
+display[0] <= deco_7:deco.port0
+display[1] <= deco_7:deco.port0
+display[2] <= deco_7:deco.port0
+display[3] <= deco_7:deco.port0
+display[4] <= deco_7:deco.port0
+display[5] <= deco_7:deco.port0
+display[6] <= deco_7:deco.port0
+inputHex[0] => inputHex[0].IN1
+inputHex[1] => inputHex[1].IN1
+inputHex[2] => inputHex[2].IN1
+inputHex[3] => inputHex[3].IN1
+enable => enable.IN1
+
+
+|contadorAsincronico|hex7seg:disp1|deco_7:deco
+display[0] <= display.DB_MAX_OUTPUT_PORT_TYPE
+display[1] <= display.DB_MAX_OUTPUT_PORT_TYPE
+display[2] <= display.DB_MAX_OUTPUT_PORT_TYPE
+display[3] <= display.DB_MAX_OUTPUT_PORT_TYPE
+display[4] <= display.DB_MAX_OUTPUT_PORT_TYPE
+display[5] <= display.DB_MAX_OUTPUT_PORT_TYPE
+display[6] <= display.DB_MAX_OUTPUT_PORT_TYPE
+inputHex[0] => Decoder0.IN3
+inputHex[1] => Decoder0.IN2
+inputHex[2] => Decoder0.IN1
+inputHex[3] => Decoder0.IN0
+enable => display.OUTPUTSELECT
+enable => display.OUTPUTSELECT
+enable => display.OUTPUTSELECT
+enable => display.OUTPUTSELECT
+enable => display.OUTPUTSELECT
+enable => display.OUTPUTSELECT
+enable => display.OUTPUTSELECT
+
+
+|contadorAsincronico|hex7seg:disp2
+display[0] <= deco_7:deco.port0
+display[1] <= deco_7:deco.port0
+display[2] <= deco_7:deco.port0
+display[3] <= deco_7:deco.port0
+display[4] <= deco_7:deco.port0
+display[5] <= deco_7:deco.port0
+display[6] <= deco_7:deco.port0
+inputHex[0] => inputHex[0].IN1
+inputHex[1] => inputHex[1].IN1
+inputHex[2] => inputHex[2].IN1
+inputHex[3] => inputHex[3].IN1
+enable => enable.IN1
+
+
+|contadorAsincronico|hex7seg:disp2|deco_7:deco
+display[0] <= display.DB_MAX_OUTPUT_PORT_TYPE
+display[1] <= display.DB_MAX_OUTPUT_PORT_TYPE
+display[2] <= display.DB_MAX_OUTPUT_PORT_TYPE
+display[3] <= display.DB_MAX_OUTPUT_PORT_TYPE
+display[4] <= display.DB_MAX_OUTPUT_PORT_TYPE
+display[5] <= display.DB_MAX_OUTPUT_PORT_TYPE
+display[6] <= display.DB_MAX_OUTPUT_PORT_TYPE
+inputHex[0] => Decoder0.IN3
+inputHex[1] => Decoder0.IN2
+inputHex[2] => Decoder0.IN1
+inputHex[3] => Decoder0.IN0
+enable => display.OUTPUTSELECT
+enable => display.OUTPUTSELECT
+enable => display.OUTPUTSELECT
+enable => display.OUTPUTSELECT
+enable => display.OUTPUTSELECT
+enable => display.OUTPUTSELECT
+enable => display.OUTPUTSELECT
+
+

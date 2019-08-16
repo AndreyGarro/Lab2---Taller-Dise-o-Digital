@@ -1,0 +1,188 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dC:/Users/diego/OneDrive/Documentos/TallerDiseno/ContadorAsincronico/simulation/modelsim
+vanalizadorBits
+Z1 DXx6 sv_std 3 std 0 22 AD7iAPLo6nTIKk<N0eo=D3
+Z2 !s110 1565931874
+!i10b 1
+!s100 z@K:X@zk==ObW<>C^3_R@2
+I0_F[=N>kI6LZT0^DQ@REz0
+Z3 VDg1SIo80bB@j0V0VzS_@n1
+!s105 analizadorBits_sv_unit
+S1
+R0
+w1565928676
+8C:/Users/diego/OneDrive/Documentos/TallerDiseno/ContadorAsincronico/analizadorBits.sv
+FC:/Users/diego/OneDrive/Documentos/TallerDiseno/ContadorAsincronico/analizadorBits.sv
+L0 1
+Z4 OV;L;10.5b;63
+r1
+!s85 0
+31
+Z5 !s108 1565931874.000000
+!s107 C:/Users/diego/OneDrive/Documentos/TallerDiseno/ContadorAsincronico/analizadorBits.sv|
+!s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/diego/OneDrive/Documentos/TallerDiseno/ContadorAsincronico|C:/Users/diego/OneDrive/Documentos/TallerDiseno/ContadorAsincronico/analizadorBits.sv|
+!i113 1
+Z6 o-sv -work work
+Z7 !s92 -sv -work work +incdir+C:/Users/diego/OneDrive/Documentos/TallerDiseno/ContadorAsincronico
+Z8 tCvgOpt 0
+nanalizador@bits
+vcontador
+R1
+R2
+!i10b 1
+!s100 o515zWkzm78edJ:2E<O=72
+Ide>Vbb_Cod2ZdCORQRj`10
+R3
+!s105 contador_sv_unit
+S1
+R0
+w1565894950
+8C:/Users/diego/OneDrive/Documentos/TallerDiseno/ContadorAsincronico/contador.sv
+FC:/Users/diego/OneDrive/Documentos/TallerDiseno/ContadorAsincronico/contador.sv
+L0 1
+R4
+r1
+!s85 0
+31
+R5
+!s107 C:/Users/diego/OneDrive/Documentos/TallerDiseno/ContadorAsincronico/contador.sv|
+!s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/diego/OneDrive/Documentos/TallerDiseno/ContadorAsincronico|C:/Users/diego/OneDrive/Documentos/TallerDiseno/ContadorAsincronico/contador.sv|
+!i113 1
+R6
+R7
+R8
+vcontadorAsincronico
+R1
+R2
+!i10b 1
+!s100 K^ozP2icPSF5anZ7i[nEa1
+Ib:>B<N<F2NJBQNNzIbM8N2
+R3
+!s105 contadorAsincronico_sv_unit
+S1
+R0
+w1565894822
+8C:/Users/diego/OneDrive/Documentos/TallerDiseno/ContadorAsincronico/contadorAsincronico.sv
+FC:/Users/diego/OneDrive/Documentos/TallerDiseno/ContadorAsincronico/contadorAsincronico.sv
+L0 1
+R4
+r1
+!s85 0
+31
+R5
+!s107 C:/Users/diego/OneDrive/Documentos/TallerDiseno/ContadorAsincronico/contadorAsincronico.sv|
+!s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/diego/OneDrive/Documentos/TallerDiseno/ContadorAsincronico|C:/Users/diego/OneDrive/Documentos/TallerDiseno/ContadorAsincronico/contadorAsincronico.sv|
+!i113 1
+R6
+R7
+R8
+ncontador@asincronico
+vdeco_7
+R1
+R2
+!i10b 1
+!s100 V80[JLb0HA4[9V29f2Z`L0
+Ie7^D9X5O3l4Ii^m^9elo30
+R3
+!s105 deco_7_sv_unit
+S1
+R0
+w1565891284
+8C:/Users/diego/OneDrive/Documentos/TallerDiseno/ContadorAsincronico/deco_7.sv
+FC:/Users/diego/OneDrive/Documentos/TallerDiseno/ContadorAsincronico/deco_7.sv
+L0 1
+R4
+r1
+!s85 0
+31
+R5
+!s107 C:/Users/diego/OneDrive/Documentos/TallerDiseno/ContadorAsincronico/deco_7.sv|
+!s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/diego/OneDrive/Documentos/TallerDiseno/ContadorAsincronico|C:/Users/diego/OneDrive/Documentos/TallerDiseno/ContadorAsincronico/deco_7.sv|
+!i113 1
+R6
+R7
+R8
+vflipflopJK
+R1
+R2
+!i10b 1
+!s100 MCH`DFUacnRmmX0>JC4hg0
+IlPV15jAW:^Q`hVzQ_4OZI3
+R3
+!s105 flipflopJK_sv_unit
+S1
+R0
+w1565900026
+8C:/Users/diego/OneDrive/Documentos/TallerDiseno/ContadorAsincronico/flipflopJK.sv
+FC:/Users/diego/OneDrive/Documentos/TallerDiseno/ContadorAsincronico/flipflopJK.sv
+L0 1
+R4
+r1
+!s85 0
+31
+R5
+!s107 C:/Users/diego/OneDrive/Documentos/TallerDiseno/ContadorAsincronico/flipflopJK.sv|
+!s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/diego/OneDrive/Documentos/TallerDiseno/ContadorAsincronico|C:/Users/diego/OneDrive/Documentos/TallerDiseno/ContadorAsincronico/flipflopJK.sv|
+!i113 1
+R6
+R7
+R8
+nflipflop@j@k
+vhex7seg
+R1
+R2
+!i10b 1
+!s100 Hah3`8jQn`bB5f091C4N>0
+I@6=`Q=]h<Q:ZhH`ZXEm^L3
+R3
+!s105 hex7seg_sv_unit
+S1
+R0
+w1565891299
+8C:/Users/diego/OneDrive/Documentos/TallerDiseno/ContadorAsincronico/hex7seg.sv
+FC:/Users/diego/OneDrive/Documentos/TallerDiseno/ContadorAsincronico/hex7seg.sv
+L0 1
+R4
+r1
+!s85 0
+31
+R5
+!s107 C:/Users/diego/OneDrive/Documentos/TallerDiseno/ContadorAsincronico/hex7seg.sv|
+!s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/diego/OneDrive/Documentos/TallerDiseno/ContadorAsincronico|C:/Users/diego/OneDrive/Documentos/TallerDiseno/ContadorAsincronico/hex7seg.sv|
+!i113 1
+R6
+R7
+R8
+vtest
+R1
+R2
+!i10b 1
+!s100 ec0VZTknjO8^jJVLfSUV01
+I7jE2IA`8Xh5JTD=J:kBVK0
+R3
+!s105 test_sv_unit
+S1
+R0
+w1565931851
+8C:/Users/diego/OneDrive/Documentos/TallerDiseno/ContadorAsincronico/test.sv
+FC:/Users/diego/OneDrive/Documentos/TallerDiseno/ContadorAsincronico/test.sv
+L0 1
+R4
+r1
+!s85 0
+31
+R5
+!s107 C:/Users/diego/OneDrive/Documentos/TallerDiseno/ContadorAsincronico/test.sv|
+!s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/diego/OneDrive/Documentos/TallerDiseno/ContadorAsincronico|C:/Users/diego/OneDrive/Documentos/TallerDiseno/ContadorAsincronico/test.sv|
+!i113 1
+R6
+R7
+R8
